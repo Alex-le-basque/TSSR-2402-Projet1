@@ -1,0 +1,24 @@
+# Configuration des VM
+## 1. Création VM-Ubuntu-Client
+### a. Prérequis
+- 4G Ram
+- 2 CPU
+- 2 Cartes réseau : 1 NAT et 1 Interne
+_Dans affichage cocher l'option : "Activer l'accéleration 3D"_
+
+### b.Post-installation
+- Désactivation veille
+- Faire maj système sudo apt update && sudo apt upgrade -y
+Installer les guest additions (en GUI)
+
+### c.Paramétrer IP fixe (sur carte réseau 2)
+- En GUI, dans activités rechercher “réseau” puis choisir Connexion filaire 2
+- Ajouter dans IPV4 
+Adresse :172.16.10.20
+Masque de réseau : 255.255.255.0 (le nombre 24 s'inscira automatiquement)
+
+## 2. Création VM-Windows Server 2022
+### a. Prérequis
+- 4G Ram
+- 2 CPU
+- 2 Cartes réseau : 1 NAT et 1 Interne
