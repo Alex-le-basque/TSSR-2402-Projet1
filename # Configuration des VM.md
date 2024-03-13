@@ -13,7 +13,7 @@ _Dans affichage cocher l'option : "Activer l'accéleration 3D"_
 
 Installer SSH : sudo apt-get install openssh-server  # Installer le serveur SSH
 
-Générer clé SSH : ssh-keygen -R 172.16.10.10
+Générer clé SSH : ssh-keygen -R 172.16.10.10 (si le SSH server est opérationnel sur la VM Windows)
 
 vérifier la clé : ssh-keyscan -t rsa 172.16.10.10
 
@@ -38,6 +38,6 @@ https://247-it.io/windows-serveur-2022-installer-serveur-ssh/
 
 ## 3. Commande pour récupérer le fichier
 
-# **scp Administrator@172.16.10.10:/C:/Users/Administrator/testrecep.txt ~/Documents**
+### **scp Administrator@172.16.10.10:/C:/Users/Administrator/testrecep.txt ~/Documents**
 
 
