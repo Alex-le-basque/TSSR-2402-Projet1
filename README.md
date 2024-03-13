@@ -42,7 +42,8 @@ Effectuer une attaque sur un compte local du serveur
 ##### Les livrables
 
 - Les livrables sont les résultats ou les produits finaux du projet qui sont livrés au client ou aux parties prenantes. Ils peuvent inclure rapports, documents, logiciels, etc ...
-<br> 
+<br>
+
 - Ils sont disponibles sur la plateforme GitHub, un dépôt a été créé à cet effet : [TSSR-2402-P1-G1](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse)
 
 </details>
