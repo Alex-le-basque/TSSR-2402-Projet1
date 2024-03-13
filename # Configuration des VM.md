@@ -32,3 +32,6 @@ Masque de réseau : 255.255.255.0 (le nombre 24 s'inscira automatiquement)
 - 2 Cartes réseau : 1 NAT et 1 Interne
 
   
+Installer SSH
+
+https://247-it.io/windows-serveur-2022-installer-serveur-ssh/
