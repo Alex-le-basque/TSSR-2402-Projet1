@@ -36,8 +36,8 @@ Installer SSH
 
 https://247-it.io/windows-serveur-2022-installer-serveur-ssh/
 
-### 3. Commande pour récupérer le fichier
+## 3. Commande pour récupérer le fichier
 
-**scp Administrator@172.16.10.10:/C:/Users/Administrator/testrecep.txt ~/Documents**
+# **scp Administrator@172.16.10.10:/C:/Users/Administrator/testrecep.txt ~/Documents**
 
 
