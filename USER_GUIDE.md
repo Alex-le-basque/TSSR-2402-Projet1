@@ -26,7 +26,7 @@ La version "-jumbo" est une amélioration de cet outil, et permet, entre autres,
 
 <br>
 
-- [Hashcat](https://github.com/hashcat/hashcat), quand à lui, se définit comme l'utilitaire de         récupération de mots de p  asse "*le plus rapide et le plus avancé du monde*".
+- [Hashcat](https://github.com/hashcat/hashcat), quand à lui, se définit comme l'utilitaire de récupération de mots de passe "*le plus rapide et le plus avancé du monde*". 
 Cependant, contrairement [JohnTheRipper](https://github.com/openwall/john), il ne posséde pas la fonctionnalité lui permettant de récupérer le "hash" des fichiers `.zip`
 
 </details>
