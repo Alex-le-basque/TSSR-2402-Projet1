@@ -31,7 +31,7 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 <br>
 
-### ***Dans le cadre de notre projet, et des pour des raisons pratiques, nous utiliserons uniquement le logiciel [Hashcat](https://github.com/hashcat/hashcat) (Version -jumbo).***
+### ***Dans le cadre de notre projet, et des pour des raisons pratiques, nous utiliserons uniquement l'outil [Hashcat](https://github.com/hashcat/hashcat) (Version -jumbo).***
 
 <br>
 
