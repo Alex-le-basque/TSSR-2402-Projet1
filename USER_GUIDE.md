@@ -27,7 +27,13 @@ La version "-jumbo" est une amélioration de cet outil, et permet, entre autres,
 <br>
 
 - [Hashcat](https://github.com/hashcat/hashcat), quand à lui, se définit comme l'utilitaire de récupération de mots de passe "*le plus rapide et le plus avancé du monde*". 
-Cependant, contrairement [JohnTheRipper](https://github.com/openwall/john), il ne posséde pas la fonctionnalité lui permettant de récupérer le "hash" des fichiers `.zip`
+Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), il ne posséde pas la fonctionnalité lui permettant de récupérer le "hash" des fichiers `.zip`
+
+<br>
+
+### ***Dans le cadre de notre projet, et des pour des raisons pratiques, nous utiliserons uniquement le logiciel [Hashcat](https://github.com/hashcat/hashcat) (Version -jumbo).***
+
+<br>
 
 </details>
 
@@ -47,7 +53,7 @@ Cependant, contrairement [JohnTheRipper](https://github.com/openwall/john), il n
    - **Mode incrémental** (*Ou attaque "brute force"*): Dans ce mode, l'outil va essayer toutes les combinaisons de caractères possibles jusqu'à trouver le bon mot de passe. Cette technique est techniquement infaillible, bien que la robustesse du mot de passe influe grandement sur le temps de calcul nécessaire à le trouver. 
   Afin d'augmenter la pertincence de l'algorithme, l'outil va implémenter la recherche des caractères par fréquence d'utilisation, pour rechercher en priorité les caractères les plus utilisés statistiquement.
 
-   - **Attaque par dictionnaire** : L'outil essaiera un à un tous les mots contenus dans une liste préalablement chargée (Par défault, la liste `passworld.lst` fournie contiens plus de 3000 mots), en leur appliquant les mêmes modifications que dans le mode "simple".
+   - **Attaque par dictionnaire** : L'outil essaiera un à un tous les mots contenus dans une liste préalablement chargée (Par défault, la liste `password.lst` fournie contiens plus de 3000 mots), en leur appliquant les mêmes modifications que dans le mode "simple".
 
 <br>
 
