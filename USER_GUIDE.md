@@ -7,10 +7,11 @@
 
 <br>
 
-- JohnTheRipper ou Hashcat ?
--  Caractéristiques de JohnTheRipper et Hashcat
--  Utilisation
--  FAQ
+-  <b><i>JohnTheRipper ou Hashcat ?</i></b>
+-  <b><i>Caractéristiques de JohnTheRipper et Hashcat</i></b>
+-  <b><i>Utilisation simple</i></b>
+-  <b><i>Utilisation avancée</i></b>
+-  <b><i>FAQ</i></b>
 
 </details>
 
@@ -67,7 +68,7 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 ## [Hashcat](https://github.com/hashcat/hashcat)
 
-- ##### Modes de fonctionnement :
+- #### Modes de fonctionnement :
 
   - **Attaque par combinateur** : Les mots de passe étant souvent constitués de mots composés, Hashcat va exploiter cette habitude et se servir de la méthode de l'attaque par dictionnaire afin de créer une nouvelle liste, chaque mot sur deux de la liste sera combiné ; L'outil pourra également utiliser les signes de ponctuation et les caractères spéciaux pour créer une liste finale de mots de passe potentiels.
 
@@ -75,18 +76,21 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 <font size="-1">**NB** : [Hashcat](https://github.com/hashcat/hashcat) dispose également des mêmes modes de fonctionnement que [JohnTheRipper](https://github.com/openwall/john).</font> 
 <br>
-- ##### Avantages :
+- #### Avantages :
   - Flexibilité : Prise en charge de nombreux formats de "hash".
   - Performance : Considéré comme l'un des outils de "cracking" de mot de passe les plus performants.
-
-
-
 
 </details>
 
 <details>
 
-<summary><strong><font size="+1">Utilisation</font></strong></summary>
+<summary><strong><font size="+1">Utilisation simple</font></strong></summary>
+
+</details>
+
+<details>
+
+<summary><strong><font size="+1">Utilisation avancée</font></strong></summary>
 
 </details>
 
