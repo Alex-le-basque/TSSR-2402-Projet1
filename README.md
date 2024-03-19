@@ -20,7 +20,7 @@
 
 - <b><i>Solutions et/ou Alternatives trouvées pour palier aux problèmes</i></b>
 
-- <b><i>Next-Step : Améliorations possibles envisagées</i></b>
+- <b><i>Améliorations possibles envisagées</i></b>
 
 </details>
 
@@ -52,6 +52,17 @@ Effectuer une attaque sur un compte local du serveur
 
 <details>
 
+<summary><strong>Introduction : Mise en contexte</strong></summary>
+
+> Dans un contexte actuel, il est devenu de plus en plus indispensable de protéger nos données de la manière la plus efficace qui soit.
+> L'objectif de ce projet est avant tout de démontrer qu'un mot de passe simple est vulnérable, que le hack de mots de passe est malheureusement à la portée de tous, et enfin, de proposer des solutions pour complexifier l'accès à vos données par des personnes tierces.
+
+</details>
+
+<br>
+
+<details>
+
 <summary><strong>Présentation des membres du groupe et de leur rôles</strong></summary>
 
 ##### Le Projet est composé de :
@@ -72,18 +83,19 @@ Le PO est le représentant du client. Il est responsable de la définition des b
 
 ###### Sont nommés pour la première semaine de Projet (Sprint 1) :
 
-- PO : **Thomas**
 - SM : **Alexandre**
+- PO : **Thomas**
 
 ###### Sont nommés pour la seconde semaine de Projet (Sprint 2) :
 
-- PO : ---
-- SM : ---
+- SM : **Maxime**
+- PO : **Grégory**
+
 
 ###### Attribution des tâches/activités par membre :
 
  - **Grégory** : Gestion des VM
- - **Maxime** : Installation de [JohnTheRipper](https://github.com/openwall/john) + Documentation User_Guide.md
+ - **Maxime** : Installation de [JohnTheRipper](https://github.com/openwall/john) + Documentation `User_Guide.md`
  - **Alexandre** : Aide sur les différentes autres tâches + Open SSH
  - **Thomas** : Mise en forme des documentations et en charge des respositorys sur le GitHub de la WCS
  - **Franck** : Vérification du bon fonctionnement des programmes du projet
@@ -109,5 +121,32 @@ Le Serveur est sous OS [Windows Server 2022](https://www.microsoft.com/fr-fr/eva
   - Compte : `Administrator`
   - Mot de passe : `Azerty1*`
   - Adresse IP fixe : `172.16.10.10/24`
+
+</details>
+
+<br>
+
+<details>
+
+<summary><strong>Difficultés rencontrées</strong></summary>
+<br>
+
+- Installation de JohnTheRipper
+
+</details>
+
+<br>
+
+<details>
+
+<summary><strong>Solutions et/ou Alternatives trouvées pour palier aux problèmes</strong></summary>
+
+</details>
+
+<br>
+
+<details>
+
+<summary><strong>Améliorations possibles envisagées</strong></summary>
 
 </details>
