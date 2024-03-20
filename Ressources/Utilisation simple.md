@@ -5,7 +5,7 @@
 - **Système d'exploitation :** Ubuntu Jammy Jellyfish 22.04.4
 - **Mémoire vive :** 4096 Mo
 - **Nombre de processeurs :** 2
-- **Carte réseau :** Nat et Réseau interne (même plage IP)
+- **Carte réseau :** Nat et Réseau interne (même plage IP que le serveur)
 - **SSH :** installée et configurée
 
 ### Installation de John the Ripper
