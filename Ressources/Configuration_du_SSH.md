@@ -3,13 +3,15 @@
 ## 1. VM Windows Server
 Ouvrir Powershell en Admisistrator
 
-- Pour installer le service SSH:
->**Add-WindowsCapability -Online -Name OpenSSH.Server**
+- Pour installer le service SSH:  
+**``Add-WindowsCapability -Online -Name OpenSSH.Server``**
 
-- Pour un démarrage automatique :
->**Set-Service sshd -StartupType Automatic**
+- Pour un démarrage automatique :  
+**``Set-Service sshd -StartupType Automatic``**
 
-_Vérifier si le service est bien actif (cf copie d'écran ci-dessous)_
+![install](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Capture%20Images/install%20ssh%20Windows.PNG?raw=true)
+
+_Vérifier si le service est bien actif (cf copies d'écran ci-dessous)_
 
 ![services](https://github.com/Seyia11/capture-cran-2/blob/main/service%20SSH%20Windows.PNG?raw=true)
 
@@ -20,16 +22,18 @@ _Vérifier si le service est bien actif (cf copie d'écran ci-dessous)_
 
 Ourvir le Terminal
 
-- Pour installer le service SSH:
->**sudo apt-get install openssh-server**
+- Pour installer le service SSH:  
+**``sudo apt-get install openssh-server``**
+
+![UBUNTU](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Capture%20Images/install%20ssh%20Ubuntu%201.PNG?raw=true)
 
 Lors du message : _Souhaitez-vous continuer ? [O/n]_ Taper O
 
-- Une fois le SSH installé, il faut l'activer:
->**sudo systemctl enable ssh**
+- Une fois le SSH installé, il faut l'activer:  
+**``sudo systemctl enable ssh``**
 
-- Pour terminer génerez une clé à destination du Server Windows:
->**ssh-keyscan -t rsa 172.16.10.10**
+- Pour terminer génerez une clé à destination du Server Windows:  
+**``ssh-keyscan -t rsa 172.16.10.10``**
 
 Redémarer la VM
 
@@ -40,7 +44,7 @@ Nous avons paramétré le service SSH sur les deux VM pour le partage de fichier
 - Sur la VM Server Windows, créer le fichier test1.txt à la racine du dossier Administrator.
 
 - Depuis la VM Cleint Ubuntu, ouvrer le Terminal et taper la commande ci dessous:
->scp Administrator@172.16.10.10:/C:/Users/Administrator/test1.txt ~/Documents
+**``scp Administrator@172.16.10.10:/C:/Users/Administrator/test1.txt ~/Documents``**
 
 _Attention: le mot de passe demandé sera celui du compte Administrator Windows_
 
