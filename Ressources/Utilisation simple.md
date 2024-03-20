@@ -6,7 +6,7 @@
 - **Mémoire vive :** 4096 Mo
 - **Nombre de processeurs :** 2
 - **Carte réseau :** Nat et Réseau interne (même plage IP)
-- **SSH :** Configuration installée et configurée
+- **SSH :** installée et configurée
 
 ### Installation de John the Ripper
 
