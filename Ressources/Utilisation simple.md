@@ -12,7 +12,7 @@
 
 Pour installer John the Ripper, dans ton terminal utilisez la commande suivante :
 
-sudo snap install john-the-ripper 
+`sudo snap install john-the-ripper`
 
 John the Ripper version jumbo installé
 
@@ -20,7 +20,7 @@ John the Ripper version jumbo installé
 
 ### Installation des librairies pour le hack de mots de passe
 
-sudo apt install ocl-icd-opencl-dev -y
+`sudo apt install ocl-icd-opencl-dev -y`
 
 ![ocl-icd-opencl-dev installé](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Image%20de%20max/install%C3%A9%20ocl-icd-opencl-dev.png?raw=true)
 
@@ -28,7 +28,7 @@ sudo apt install ocl-icd-opencl-dev -y
 
 Pour obtenir le hash d'un fichier zip, vous devez utiliser la commande `zip2john`. Pour vous faciliter la tâche, je vous propose de créer un alias de `zip2john` avec la commande suivante :
 
-sudo snap alias john-the-ripper.zip2john zip2john
+`sudo snap alias john-the-ripper.zip2john zip2john`
 
 
 Testez la commande en entrant `zip2john` dans le terminal. Si l'alias fonctionne, vous devriez obtenir le même résultat que sur l'image ci-dessous :
@@ -73,7 +73,7 @@ Copiez et collez le fichier zip à l'emplacement souhaité.
 
 Dans votre terminal, utilisez John the Ripper pour récupérer le hash du fichier .zip vers le fichier `hash.txt` :
 
-zip2john /home/wilder/SECRETDEFENSE.zip > /home/wilder/hash.txt
+`zip2john /home/wilder/SECRETDEFENSE.zip > /home/wilder/hash.txt`
 
 
 ![image](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/assets/162970946/b85140f2-c668-406e-b563-a3c684f0da09)
