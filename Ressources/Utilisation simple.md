@@ -14,7 +14,7 @@ Pour installer John the Ripper, utilisez la commande suivante :
 
 sudo snap install john-the-ripper
 
-![John the Ripper est installé avec le pack jumbo](John-the-ripper-est-installe-avec-le-pack-jumbo.png)
+![John the Ripper est installé avec le pack jumbo](Images/Image de max)
 
 John the Ripper version jumbo installé
 
