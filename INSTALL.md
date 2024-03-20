@@ -14,7 +14,7 @@
 
 - <b><i>Installation du poste Serveur</i></b>
 
-- <b><i>Test de l'outil JohnTheRipper en local</i></b>
+- <b><i>Installation de l'outil JohnTheRipper</i></b>
 
 - <b><i>Configuration du SSH</i></b>
 
@@ -58,12 +58,9 @@ Pour le poste Client, il nous faut :
 
 <br>
 
-- Installation des MàJ système : `sudo apt update && sudo apt upgrade -y`
+- Installation des MàJ système : **`sudo apt update && sudo apt upgrade -y`**
 - Installation des "Guest Additions" (Dans le cadre d'une VM)
-- Désactivation du parefeu : `sudo ufw disable`
-- Installation de l'outil [JohnTheRipper](https://github.com/openwall/john) : `sudo snap install john-the-ripper`
-- Installation des librairies de [JohnTheRipper](https://github.com/openwall/john) : `sudo apt install ocl-icd-opencl-dev -y`
-- Edition d'un alias  pour la commande `zip2john` : `sudo snap alias john-the-ripper.zip2john zip2john`
+- Désactivation du parefeu : **`sudo ufw disable`**
 
 <br>
 
@@ -99,7 +96,35 @@ Pour le poste Serveur, il nous faut :
 
 <details>
 
-<summary><strong>Test de l'outil JohnTheRipper en local</strong></summary>
+<summary><strong>Installation de l'outil JohnTheRipper</strong></summary>
+
+<br>
+
+- Installation de l'outil [JohnTheRipper](https://github.com/openwall/john) : **`sudo snap install john-the-ripper`**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_1.jpg)
+
+<br>
+
+- Installation des librairies de [JohnTheRipper](https://github.com/openwall/john) : **`sudo apt install ocl-icd-opencl-dev -y`**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_2.jpg)
+
+<br>
+
+- Edition d'un alias  pour la commande `zip2john` : **`sudo snap alias john-the-ripper.zip2john zip2john`**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_3.jpg)
+
+<br>
+
+- ***[Optionnel]*** Téléchargement de la wordlist [rockyou](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_4.jpg)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_5.jpg)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_6.jpg)
 
 </details>
 
@@ -109,7 +134,105 @@ Pour le poste Serveur, il nous faut :
 
 <summary><strong>Configuration du SSH</strong></summary>
 
-test1
+# Configuration du SSH
+
+## 1. VM Windows Server
+- Exécuter Powershell en "mode administrateur"
+
+- Pour installer le service SSH :  
+**``Add-WindowsCapability -Online -Name OpenSSH.Server``**
+  
+![install](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_1.jpg)
+
+<br>
+
+- Pour un démarrage automatique :  
+**``Set-Service sshd -StartupType Automatic``**
+
+![auto](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_2.jpg)
+
+<br>
+
+- Redémarer la VM et vérifier dans les Services que le serveur OpenSSH est bien "**en cours**" et en "**démarrage automatique**"
+
+![services](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_4.jpg)
+
+
+
+
+## 2. VM Ubuntu Client
+
+- Exécuter le Terminal
+
+- Pour installer le service SSH :  
+**``sudo apt-get install openssh-server``**
+
+![UBUNTU](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/install%20ssh%20Ubuntu%201.PNG?raw=true)
+
+Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
+
+<br>
+
+- Une fois le SSH installé, il faut l'activer :  
+**``sudo systemctl enable ssh``**
+
+![active](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/activation%20ssh%20ubuntu.PNG?raw=true)
+
+<br>
+
+- Pour terminer, génerer une clé à destination de Windows Server :  
+**``ssh-keyscan -t rsa 172.16.10.10``**
+
+![gen](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/generer%20cl%C3%A9%20ubuntu.PNG?raw=true)
+
+<br>
+
+- Redémarer la VM
+
+# 3. Test transfert de fichier
+
+Nous avons paramétré le service SSH sur les deux VM pour le partage de fichier.
+
+- Sur la VM Server Windows, créer le fichier test1.txt à la racine du dossier Administrator :  
+**``New-Item -ItemType File -Path "test1.txt``**
+
+![fic](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/cr%C3%A9a%20fichier%20test1.PNG?raw=true)
+
+- Depuis la VM Client Ubuntu, ouvrir le Terminal et taper la commande ci dessous:
+
+**``scp Administrator@172.16.10.10:/C:/Users/Administrator/test1.txt ~/Documents``**
+
+![copie](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/copie%20fichier.PNG?raw=true)
+
+_Attention: le mot de passe demandé sera celui du compte Administrator Windows_
+
+- Le fichier test1 est copié dans le dossier Documents du compte wilder.
+
+<br>
+
+# 4. Accès aux fichiers de Windows Server depuis Ubuntu
+
+- Se rendre dans `Fichiers`, puis `Autres emplacements`, puis `Connexion à un serveur`, et taper l'adresse suivante : **`ssh//Adminsitrator@172.16.10.10`**
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
+
+Cliquer sur `Se connecter`
+
+<br>
+
+- Un mot de passe sera demandé, il s'agira de celui du compte Adminsitrator de Windows Server
+  
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
+
+<br>
+
+- L'accès aux fichiers situés sur Windows Server sera effectif
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
+
+<br>
+
+_Si problème, se reporter à la FAQ_
 
 </details>
 
