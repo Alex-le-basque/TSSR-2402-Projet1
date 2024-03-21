@@ -33,7 +33,7 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 <br>
 
-### ***Dans le cadre de notre projet, et des pour des raisons pratiques, nous utiliserons uniquement l'outil [Hashcat](https://github.com/hashcat/hashcat) (Version -jumbo).***
+### ***Dans le cadre de notre projet, et des pour des raisons pratiques, nous utiliserons uniquement l'outil [JohnTheRipper](https://github.com/openwall/john) (Version -jumbo).***
 
 <br>
 
@@ -86,11 +86,148 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 <summary><strong><font size="+1">Utilisation simple</font></strong></summary>
 
+## "Hack" du mot de passe d'un fichier `.zip` distant
+
+### 1 - Accès aux fichiers de Windows Server depuis Ubuntu
+
+- Se rendre dans `Fichiers`, puis `Autres emplacements`, puis `Connexion à un serveur`, et taper l'adresse suivante :
+```bash
+ssh//Administrator@172.16.10.10
+```
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
+
+Cliquer sur `Se connecter`
+
+<br>
+
+- Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server
+  
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
+
+<br>
+
+- L'accès aux fichiers situés sur la machine Windows Server sera effectif
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
+
+<br>
+
+### 2 - Copie du fichier `.zip` sur la machine hôte Ubuntu
+
+- Localiser le fichier `.zip` dans l'arborescence de la machine Windows Server (içi : `Private.zip`)
+
+  ![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_1.jpg)
+
+<br>
+
+- Le copier, via un simple glisser-déposer par exemple, dans un dossier de la machine hôte Ubuntu (içi : `Dossier personnel`)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_2.jpg)
+
+<br>
+
+- Exécuter le Terminal et lancer la commande :
+```bash
+zip2john <nom_du_fichier.zip> > <nom_du_fichier_hash.txt>
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_3.jpg)
+
+<br>
+
+- Le fichier "hash" ayant été crée, et contenant le "hash" du fichier `.zip` précédent, nous allons taper la commande suivante afin de tenter de récupérer le mot de passe :
+```bash
+john <nom_du_fichier_hash.txt>
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_4.jpg)
+
+Le mot de passe du fichier `.zip` est indiqué en clair dans le cas où il serait trouvé (içi : `toto123456`)
+
+<br>
+
+- Nous pouvons extraire le contenu de l'archive via un simple clic droit -> `Extraire` , puis en inscrivant le mot de passe (içi : `toto123456`)
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_5.jpg)
+
+<br>
+
+- Après extraction, un dossier du nom du fichier `.zip` a été créé, avec le contenu de l'archive à l'intérieur
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_6.jpg)
+
+<br>
+
+- Dans notre exemple, le dossier contient un fichier `Info.txt`, que nous pouvons dorénavant ouvrir
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_7.jpg)
+
 </details>
 
 <details>
 
 <summary><strong><font size="+1">Utilisation avancée</font></strong></summary>
+
+## "Hack" de la base "SAM" de Windows Server
+
+- Exectuter le Terminal sur Ubuntu et taper la commande suivante :
+```bash
+ssh Administrator@172.16.10.10
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_3.jpg)
+
+Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server (içi : `Azerty1*`)
+
+<br>
+
+- Une fois le mot de passe entré et validé, le Terminal sur Ubuntu prendra l'apparence d'un Terminal Windows :
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_4.jpg)
+
+<br>
+
+- Exécuter les commandes suivantes :
+```cmd
+reg.exe save hklm\sam C:\sam
+reg.exe save hklm\system C:\system
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_5.jpg)
+
+<br>
+
+- Deux fichiers, `sam` et `system`, ont été créés à la racine de `C:\` sur la machine distante Windows Server :
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_1.jpg)
+
+- Copier ces deux fichiers (via un glisser-déposer par exemple) dans votre dossier personnel de la machine hôte Ubuntu
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_2.jpg)
+
+<br>
+
+- Installer l'outil `Impacket` via le Terminal Ubuntu :
+```bash
+sudo apt install python3-impacket
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_6.jpg)
+
+<br>
+
+- Exécuter la commande suivante afin de récupérer le hash des deux fichiers précédemment copiés :
+```bash
+impacket-secretsdump -system system -sam sam local > <nom_du_fichier_hash.txt>
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_7.jpg)
+
+Un fichier "hash" a été crée (içi : `hashsam.txt`)
+
+<br>
+
+- Ouvrir le fichier "hash" et vérifier qu'il contient des informations sur les comptes distants Windows Server
+
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_8.jpg)
+
+
+
 
 </details>
 
