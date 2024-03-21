@@ -132,6 +132,8 @@ Le Serveur est sous OS [Windows Server 2022](https://www.microsoft.com/fr-fr/eva
 <br>
 
 - Installation de JohnTheRipper
+- Installation de SSH
+- Utilisation de JohnTheRipper et SSH
 
 </details>
 
@@ -141,6 +143,8 @@ Le Serveur est sous OS [Windows Server 2022](https://www.microsoft.com/fr-fr/eva
 
 <summary><strong>Solutions et/ou Alternatives trouvées pour palier aux problèmes</strong></summary>
 
+
+
 </details>
 
 <br>
@@ -148,5 +152,12 @@ Le Serveur est sous OS [Windows Server 2022](https://www.microsoft.com/fr-fr/eva
 <details>
 
 <summary><strong>Améliorations possibles envisagées</strong></summary>
+<br>
+
+***Script d'automatisation*** : Développer un script permettant de simplifier l'utilisation de John the Ripper et de SSH. 
+
+***Interface Graphique (GUI)*** : Cette interface pourrait permettre aux utilisateurs de configurer les options de crack. 
+
+***Intégration d'un Assistant IA*** : L'ajout d'un assistant basé sur l'intelligence artificielle pour guider l'utilisateur à travers le processus de configuration et d'utilisation de John the Ripper et SSH
 
 </details>
