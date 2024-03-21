@@ -277,7 +277,7 @@ _Si problème, se reporter à la FAQ_
 <details>
 
 <summary><strong>FAQ</strong></summary>
-
+<br>
  
 ***Q : Mes deux machines ne communiquent pas. Que dois-je faire ?***
 
