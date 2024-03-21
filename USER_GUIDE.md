@@ -92,7 +92,7 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 
 - Se rendre dans `Fichiers`, puis `Autres emplacements`, puis `Connexion à un serveur`, et taper l'adresse suivante :
 ```bash
-ssh//Administrator@172.16.10.10
+ssh://Administrator@172.16.10.10
 ```
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
@@ -101,7 +101,7 @@ Cliquer sur `Se connecter`
 
 <br>
 
-- Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server
+- Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server (Dans notre cas : `Azerty1*`)
   
 ![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
 
@@ -226,7 +226,15 @@ Un fichier "hash" a été crée (içi : `hashsam.txt`)
 
 ![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_8.jpg)
 
+<br>
 
+- Exécuter la commande suivante :
+```bash
+john --format=NT <nom_du_fichier_hash.txt>
+```
+![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_9.jpg)
+
+Dans notre exemple, le mot de passe du compte local `Test` a été trouvé, il s'agit de `toto123456!`
 
 
 </details>
@@ -238,11 +246,36 @@ Un fichier "hash" a été crée (içi : `hashsam.txt`)
 <br>
 
  - ***Qu'est ce que le "hash"*** ?
+
    - *La fonction de hachage (En anglais : [hash](https://fr.wikipedia.org/wiki/Fonction_de_hachage)) est une fonction cryptographique formée d'une unique châine de caractères destinée à coder des données (Par exemple : des mots de passe), servant ainsi à garantir l'authenticité de ces dernières.*
 
 <br>
 
 - ***Qu'est ce que le "cracking"*** ?
+
    - *le cassage de mot de passe (En anglais : [password cracking](https://fr.wikipedia.org/wiki/Cassage_de_mot_de_passe)) est le processus de récupération de mots de passe à partir de données stockées ou transmises par un système informatique*.
 
+<br>
+
+- ***Où sont stockés les mot de passe "crackés" ?***
+
+  - *Les mots de passe "crackés" sont stockés dans un fichier caché, vous pouvez accéder au contenu de ce fichier via cette commande :*
+    ```bash
+    cat /home/wilder/snap/john-the-ripper/610/.john/john.pot
+    ```
+
+<br>
+
+- ***Malgré plusieurs minutes/heures, John The Ripper ne trouve pas le mot de passe, comment faire ?***
+
+  - *Comme expliqué en introduction de ce README, John The Ripper utilise différents types d'attaques afin de réussi à trouver un mot de passe ; Cependant, les mots de passe complexes (Par exemple : Avec des caractères spéciaux) réprésentent une vraie difficulté dans le cadre d'une attaque de mots de passe par dictionnaire.*
+
+  - *Cependant, vous pouvez ajouter une "wordlist" (La "wordlist" [RockYou](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) étant la plus connue) à John The Ripper, ce qui lui permettra d'étoffer sa base de mots de passe potentiels.*
+
+  - *Il faudra ajouter le paramètre `--wordlist=<nom_de_la_wordlist.txt>` à la commande :*
+
+   ```bash
+    john --wordlist=<nom_de_la_wordlist.txt> <fichier_hash.txt>
+    ```
+   
 </details>
