@@ -279,6 +279,7 @@ _Si problème, se reporter à la FAQ_
 <summary><strong>FAQ</strong></summary>
 
 Q : Mes deux machines ne communiquent pas. Que dois-je faire ?
+
 R : Pour résoudre ce problème, suivez ces étapes :
 
 - Vérifiez si elles sont sur la même plage d'IP : Assurez-vous que les deux machines sont configurées avec des adresses IP dans la même plage. Vous pouvez le vérifier en exécutant ipconfig sous Windows ou ifconfig sous Linux pour connaître leur adresse IP actuelle.
@@ -288,6 +289,7 @@ R : Pour résoudre ce problème, suivez ces étapes :
 - Effectuez un test ping : Utilisez la commande ping suivi de l'adresse IP de l'autre machine pour vérifier s'il y a une réponse. Cela indique si les deux machines peuvent communiquer entre elles.
 
 Q : Je n'arrive pas à me connecter en SSH. Quelle pourrait être la cause ?
+
 R : Si vous rencontrez des difficultés pour établir une connexion SSH, suivez ces vérifications :
 
 - Vérifiez l'installation d'OpenSSH : Assurez-vous que le logiciel OpenSSH est correctement installé sur votre machine ainsi que sur celle à laquelle vous tentez de vous connecter. Sous Windows, vous pouvez l'installer via les fonctionnalités facultatives, tandis que sous Linux, vous pouvez l'installer à partir du gestionnaire de paquets.
