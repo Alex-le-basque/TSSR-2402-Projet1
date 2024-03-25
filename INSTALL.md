@@ -112,7 +112,7 @@ Pour le poste Serveur, il nous faut :
 sudo snap install john-the-ripper
 ```
 
-![](/Images/JTR/JTR_1.jpg)
+![JTR_1](Images/JTR/JTR_1.jpg)
 
 <br>
 
@@ -122,7 +122,7 @@ sudo snap install john-the-ripper
 sudo apt install ocl-icd-opencl-dev -y
 ```
 
-![](/Images/JTR/JTR_2.jpg)
+![JTR_2](Images/JTR/JTR_2.jpg)
 
 <br>
 
@@ -132,17 +132,17 @@ sudo apt install ocl-icd-opencl-dev -y
   sudo snap alias john-the-ripper.zip2john zip2john
 ```
 
-![](/Images/JTR/JTR_3.jpg)
+![JTR_3](Images/JTR/JTR_3.jpg)
 
 <br>
 
 - ***[Optionnel]*** Téléchargement de la wordlist [rockyou](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
 
-![](/Images/JTR/JTR_4.jpg)
+![JTR_4](Images/JTR/JTR_4.jpg)
 
-![](/Images/JTR/JTR_5.jpg)
+![JTR_5](Images/JTR/JTR_5.jpg)
 
-![](/Images/JTR/JTR_6.jpg)
+![JTR_6](Images/JTR/JTR_6.jpg)
 
 </details>
 
@@ -162,7 +162,7 @@ sudo apt install ocl-icd-opencl-dev -y
 Add-WindowsCapability -Online -Name OpenSSH.Server
 ```
   
-![install](/Images/SSH%20WinServ/SSH_WinServ_1.jpg)
+![SSH_WinServ_1](Images/SSH%20WinServ/SSH_WinServ_1.jpg)
 
 <br>
 
@@ -172,13 +172,13 @@ Add-WindowsCapability -Online -Name OpenSSH.Server
 Set-Service sshd -StartupType Automatic
 ```
 
-![auto](/Images/SSH%20WinServ/SSH_WinServ_2.jpg)
+![SSH_WinServ_2](Images/SSH%20WinServ/SSH_WinServ_2.jpg)
 
 <br>
 
 - Redémarer la VM et vérifier dans les Services que le serveur OpenSSH est bien "**en cours**" et en "**démarrage automatique**"
 
-![services](/Images/SSH%20WinServ/SSH_WinServ_4.jpg)
+![SSH_WinServ_4](Images/SSH%20WinServ/SSH_WinServ_4.jpg)
 
 
 
@@ -192,7 +192,7 @@ Set-Service sshd -StartupType Automatic
 sudo apt-get install openssh-server
 ```
 
-![UBUNTU](/Images%20Greg/install%20ssh%20Ubuntu%201.PNG?raw=true)
+![UBUNTU](Images/Images%20Greg/install%20ssh%20Ubuntu%201.PNG)
 
 Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
 
@@ -203,7 +203,7 @@ Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
  sudo systemctl enable ssh
 ```
 
-![active](/Images/Images%20Greg/activation%20ssh%20ubuntu.PNG?raw=true)
+![active](Images/Images%20Greg/activation%20ssh%20ubuntu.PNG)
 
 <br>
 
@@ -212,7 +212,7 @@ Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
 ssh-keyscan -t rsa 172.16.10.10
 ```
 
-![gen](/Images/Images%20Greg/generer%20cl%C3%A9%20ubuntu.PNG?raw=true)
+![gen](Images/Images%20Greg/generer%20cl%C3%A9%20ubuntu.PNG)
 
 <br>
 
@@ -227,7 +227,7 @@ Nous avons paramétré le service SSH sur les deux VM pour le partage de fichier
 New-Item -ItemType File -Path "test1.txt
 ```
 
-![fic](/Images/Images%20Greg/cr%C3%A9a%20fichier%20test1.PNG?raw=true)
+![fic](Images/Images%20Greg/cr%C3%A9a%20fichier%20test1.PNG)
 
 - Depuis la VM Client Ubuntu, ouvrir le Terminal et taper la commande ci dessous:
 
@@ -235,7 +235,7 @@ New-Item -ItemType File -Path "test1.txt
 scp Administrator@172.16.10.10:/C:/Users/Administrator/test1.txt ~/Documents
 ```
 
-![copie](/Images/Images%20Greg/copie%20fichier.PNG?raw=true)
+![copie](Images/Images%20Greg/copie%20fichier.PNG)
 
 _Attention: le mot de passe demandé sera celui du compte Administrator Windows_
 
@@ -250,7 +250,7 @@ _Attention: le mot de passe demandé sera celui du compte Administrator Windows_
 ssh//Adminsitrator@172.16.10.10
 ```
 
-![](/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
+![SSH_Ubuntu_4](Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
 
 Cliquer sur `Se connecter`
 
@@ -258,13 +258,13 @@ Cliquer sur `Se connecter`
 
 - Un mot de passe sera demandé, il s'agira de celui du compte Administrator de Windows Server
   
-![](/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
+![SSH_Ubuntu_6](Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
 
 <br>
 
 - L'accès aux fichiers situés sur Windows Server sera effectif
 
-![](/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
+![SSH_Ubuntu_5](Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
 
 <br>
 
