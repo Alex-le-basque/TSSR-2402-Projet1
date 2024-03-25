@@ -112,7 +112,7 @@ Pour le poste Serveur, il nous faut :
 sudo snap install john-the-ripper
 ```
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_1.jpg)
+![](/Images/JTR/JTR_1.jpg)
 
 <br>
 
@@ -122,7 +122,7 @@ sudo snap install john-the-ripper
 sudo apt install ocl-icd-opencl-dev -y
 ```
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_2.jpg)
+![](/Images/JTR/JTR_2.jpg)
 
 <br>
 
@@ -132,17 +132,17 @@ sudo apt install ocl-icd-opencl-dev -y
   sudo snap alias john-the-ripper.zip2john zip2john
 ```
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_3.jpg)
+![](/Images/JTR/JTR_3.jpg)
 
 <br>
 
 - ***[Optionnel]*** Téléchargement de la wordlist [rockyou](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_4.jpg)
+![](/Images/JTR/JTR_4.jpg)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_5.jpg)
+![](/Images/JTR/JTR_5.jpg)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/JTR/JTR_6.jpg)
+![](/Images/JTR/JTR_6.jpg)
 
 </details>
 
@@ -162,7 +162,7 @@ sudo apt install ocl-icd-opencl-dev -y
 Add-WindowsCapability -Online -Name OpenSSH.Server
 ```
   
-![install](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_1.jpg)
+![install](/Images/SSH%20WinServ/SSH_WinServ_1.jpg)
 
 <br>
 
@@ -172,13 +172,13 @@ Add-WindowsCapability -Online -Name OpenSSH.Server
 Set-Service sshd -StartupType Automatic
 ```
 
-![auto](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_2.jpg)
+![auto](/Images/SSH%20WinServ/SSH_WinServ_2.jpg)
 
 <br>
 
 - Redémarer la VM et vérifier dans les Services que le serveur OpenSSH est bien "**en cours**" et en "**démarrage automatique**"
 
-![services](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20WinServ/SSH_WinServ_4.jpg)
+![services](/Images/SSH%20WinServ/SSH_WinServ_4.jpg)
 
 
 
@@ -192,7 +192,7 @@ Set-Service sshd -StartupType Automatic
 sudo apt-get install openssh-server
 ```
 
-![UBUNTU](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/install%20ssh%20Ubuntu%201.PNG?raw=true)
+![UBUNTU](/Images%20Greg/install%20ssh%20Ubuntu%201.PNG?raw=true)
 
 Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
 
@@ -203,7 +203,7 @@ Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
  sudo systemctl enable ssh
 ```
 
-![active](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/activation%20ssh%20ubuntu.PNG?raw=true)
+![active](/Images/Images%20Greg/activation%20ssh%20ubuntu.PNG?raw=true)
 
 <br>
 
@@ -212,7 +212,7 @@ Lors du message : **`Souhaitez-vous continuer ? [O/n]`**-> Taper **`O`**
 ssh-keyscan -t rsa 172.16.10.10
 ```
 
-![gen](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/generer%20cl%C3%A9%20ubuntu.PNG?raw=true)
+![gen](/Images/Images%20Greg/generer%20cl%C3%A9%20ubuntu.PNG?raw=true)
 
 <br>
 
@@ -227,7 +227,7 @@ Nous avons paramétré le service SSH sur les deux VM pour le partage de fichier
 New-Item -ItemType File -Path "test1.txt
 ```
 
-![fic](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/cr%C3%A9a%20fichier%20test1.PNG?raw=true)
+![fic](/Images/Images%20Greg/cr%C3%A9a%20fichier%20test1.PNG?raw=true)
 
 - Depuis la VM Client Ubuntu, ouvrir le Terminal et taper la commande ci dessous:
 
@@ -235,7 +235,7 @@ New-Item -ItemType File -Path "test1.txt
 scp Administrator@172.16.10.10:/C:/Users/Administrator/test1.txt ~/Documents
 ```
 
-![copie](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Images%20Greg/copie%20fichier.PNG?raw=true)
+![copie](/Images/Images%20Greg/copie%20fichier.PNG?raw=true)
 
 _Attention: le mot de passe demandé sera celui du compte Administrator Windows_
 
@@ -250,7 +250,7 @@ _Attention: le mot de passe demandé sera celui du compte Administrator Windows_
 ssh//Adminsitrator@172.16.10.10
 ```
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
 
 Cliquer sur `Se connecter`
 
@@ -258,13 +258,13 @@ Cliquer sur `Se connecter`
 
 - Un mot de passe sera demandé, il s'agira de celui du compte Administrator de Windows Server
   
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
 
 <br>
 
 - L'accès aux fichiers situés sur Windows Server sera effectif
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
 
 <br>
 
