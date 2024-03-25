@@ -95,7 +95,7 @@ Cependant, contrairement à [JohnTheRipper](https://github.com/openwall/john), i
 ssh://Administrator@172.16.10.10
 ```
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_4.jpg)
 
 Cliquer sur `Se connecter`
 
@@ -103,13 +103,13 @@ Cliquer sur `Se connecter`
 
 - Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server (Dans notre cas : `Azerty1*`)
   
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_6.jpg)
 
 <br>
 
 - L'accès aux fichiers situés sur la machine Windows Server sera effectif
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
+![](/Images/SSH%20Ubuntu/SSH_Ubuntu_5.jpg)
 
 <br>
 
@@ -117,13 +117,13 @@ Cliquer sur `Se connecter`
 
 - Localiser le fichier `.zip` dans l'arborescence de la machine Windows Server (içi : `Private.zip`)
 
-  ![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_1.jpg)
+  ![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_1.jpg)
 
 <br>
 
 - Le copier, via un simple glisser-déposer par exemple, dans un dossier de la machine hôte Ubuntu (içi : `Dossier personnel`)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_2.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_2.jpg)
 
 <br>
 
@@ -131,7 +131,7 @@ Cliquer sur `Se connecter`
 ```bash
 zip2john <nom_du_fichier.zip> > <nom_du_fichier_hash.txt>
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_3.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_3.jpg)
 
 <br>
 
@@ -139,7 +139,7 @@ zip2john <nom_du_fichier.zip> > <nom_du_fichier_hash.txt>
 ```bash
 john <nom_du_fichier_hash.txt>
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_4.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_4.jpg)
 
 Le mot de passe du fichier `.zip` est indiqué en clair dans le cas où il serait trouvé (içi : `toto123456`)
 
@@ -147,19 +147,19 @@ Le mot de passe du fichier `.zip` est indiqué en clair dans le cas où il serai
 
 - Nous pouvons extraire le contenu de l'archive via un simple clic droit -> `Extraire` , puis en inscrivant le mot de passe (içi : `toto123456`)
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_5.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_5.jpg)
 
 <br>
 
 - Après extraction, un dossier du nom du fichier `.zip` a été créé, avec le contenu de l'archive à l'intérieur
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_6.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_6.jpg)
 
 <br>
 
 - Dans notre exemple, le dossier contient un fichier `Info.txt`, que nous pouvons dorénavant ouvrir
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20ZIP/Ubuntu_ZIP_7.jpg)
+![](/Images/Ubuntu%20ZIP/Ubuntu_ZIP_7.jpg)
 
 </details>
 
@@ -173,7 +173,7 @@ Le mot de passe du fichier `.zip` est indiqué en clair dans le cas où il serai
 ```bash
 ssh Administrator@172.16.10.10
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_3.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_3.jpg)
 
 Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de Windows Server (içi : `Azerty1*`)
 
@@ -181,7 +181,7 @@ Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de 
 
 - Une fois le mot de passe entré et validé, le Terminal sur Ubuntu prendra l'apparence d'un Terminal Windows :
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_4.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_4.jpg)
 
 <br>
 
@@ -190,17 +190,17 @@ Un mot de passe sera demandé, il s'agira de celui du compte `Administrator` de 
 reg.exe save hklm\sam C:\sam
 reg.exe save hklm\system C:\system
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_5.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_5.jpg)
 
 <br>
 
 - Deux fichiers, `sam` et `system`, ont été créés à la racine de `C:\` sur la machine distante Windows Server :
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_1.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_1.jpg)
 
 - Copier ces deux fichiers (via un glisser-déposer par exemple) dans votre dossier personnel de la machine hôte Ubuntu
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_2.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_2.jpg)
 
 <br>
 
@@ -208,7 +208,7 @@ reg.exe save hklm\system C:\system
 ```bash
 sudo apt install python3-impacket
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_6.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_6.jpg)
 
 <br>
 
@@ -216,7 +216,7 @@ sudo apt install python3-impacket
 ```bash
 impacket-secretsdump -system system -sam sam local > <nom_du_fichier_hash.txt>
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_7.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_7.jpg)
 
 Un fichier "hash" a été crée (içi : `hashsam.txt`)
 
@@ -224,7 +224,7 @@ Un fichier "hash" a été crée (içi : `hashsam.txt`)
 
 - Ouvrir le fichier "hash" et vérifier qu'il contient des informations sur les comptes distants Windows Server
 
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_8.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_8.jpg)
 
 <br>
 
@@ -232,7 +232,7 @@ Un fichier "hash" a été crée (içi : `hashsam.txt`)
 ```bash
 john --format=NT <nom_du_fichier_hash.txt>
 ```
-![](https://github.com/WildCodeSchool/TSSR-2402-P1-G1-SecurisationDeMotDePasse/blob/main/Images/Ubuntu%20SAM/Ubuntu_SAM_9.jpg)
+![](/Images/Ubuntu%20SAM/Ubuntu_SAM_9.jpg)
 
 Dans notre exemple, le mot de passe du compte local `Test` a été trouvé, il s'agit de `toto123456!`
 
